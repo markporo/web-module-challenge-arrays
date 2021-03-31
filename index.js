@@ -46,11 +46,15 @@ Use the copy function below to do the following:
 */
 
 function copy(arr) {
-    let copyOfOriginalFlavors = originalFlavors;
-    return originalFlavors;
+    let copyOfOriginalFlavors = arr;
+    return copyOfOriginalFlavors;
 }
 
+// or this...
 
+function copyBetter(arr) {
+    return [...arr];
+}
 
 
 
@@ -65,8 +69,8 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/) {
-    /*your code here*/
+function is31Flavors(arr) {
+    return arr.length === 31;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,9 +85,10 @@ Use the addFlavor function below to do the following:
     For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/) {
-    /*your code here*/
+function addFlavor(arr) {
+    let newFlavor = "Rainbow Sherbert";
+    arr.unshift(newFlavor);
+    return arr;
 }
 
 
@@ -98,8 +103,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/) {
-    /*your code here*/
+function removeLastFlavor(arr) {
+    arr.pop();
+    return arr
 }
 
 
@@ -115,8 +121,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/) {
-    /*your code here*/
+function getFlavorByIndex(arr, i) {
+    return arr[i];
 }
 
 
@@ -135,8 +141,13 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/) {
-    /*your code here*/
+function removeFlavorByName(arr, flavor,) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === flavor) {
+            arr.splice(i, 1);
+        }
+    }
+    return arr;
 }
 
 
@@ -161,8 +172,13 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/) {
-    /*your code here*/
+let newArrayOfFlavorsFound = [];
+
+function filterByWord(arr, stringFlavor,) {
+    if (arr.includes(stringFlavor)) {
+        newArrayOfFlavorsFound.push(stringFlavor);
+    }
+    return newArrayOfFlavorsFound;
 }
 
 

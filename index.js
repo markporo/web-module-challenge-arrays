@@ -197,11 +197,14 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
+// Definitely not doing this right.... :(
 function getAverageWordLength(arr) {
-    let amountOfWords = [];
-
-    let averageWordPerString = arr.length / amountOfWords;
-    return averageWordPerString;
+    let amountOfWords;
+    for (let i = 0; i < arr.length; i++) {
+        let newArray = arr[i].split(" ");
+        amountOfWords = newArray.length;
+    }
+    return (amountOfWords / arr.length) * (arr.length);
 }
 
 
@@ -217,10 +220,24 @@ Use the getRandomFlavors function and new arrays below to do the following:
     For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
+let randomFlavors = [];
 
-function getRandomFlavors(/*code here*/) {
-    /*code here*/
+function getRandomFlavors(arr1, arr2, arr3, arr4) {
+    while (randomFlavors.length < 30) {
+        let random1 = arr1[Math.floor(Math.random() * (arr1.length - 1))];
+        let random2 = arr2[Math.floor(Math.random() * (arr2.length - 1))];
+        let random3 = arr3[Math.floor(Math.random() * (arr3.length - 1))];
+        let random4 = arr4[Math.floor(Math.random() * (arr4.length - 1))];
+
+        randomFlavors.push(random1);
+        randomFlavors.push(random2);
+        randomFlavors.push(random3);
+        randomFlavors.push(random4);
+    }
+    return randomFlavors;
 }
+
+// randomFlavors = [] // reset randomFlavors to get more randomflavors
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [

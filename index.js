@@ -197,15 +197,16 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-// Definitely not doing this right.... :(
+// Got it.  With a little help.  
 function getAverageWordLength(arr) {
-    let amountOfWords;
+    let amountOfWords = 0;
     for (let i = 0; i < arr.length; i++) {
         let newArray = arr[i].split(" ");
-        amountOfWords = newArray.length;
+        amountOfWords += newArray.length;
     }
-    return (amountOfWords / arr.length) * (arr.length);
+    return (amountOfWords / arr.length);
 }
+console.log(getAverageWordLength(originalFlavors));
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
